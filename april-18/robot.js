@@ -21,3 +21,11 @@ class Robot extends EventEmitter {
 const robot = new Robot("Hank");
 
 robot.emit("speak", "hello");
+
+class Plant extends EventEmitter {
+	constructor(size, hasBeenPlanted) {
+		super();
+		this.size = 0;
+		this.hasBeenPlanted = false;
+	}
+}
