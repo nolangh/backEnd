@@ -1,3 +1,5 @@
+//ANCHOR this reads a file > finds a word >replaces word > gives word count
+
 const fs = require("fs"); //This imports the fileSystem module
 const fileToRead = process.argv[2];
 const fileToWrite = process.argv[3];
