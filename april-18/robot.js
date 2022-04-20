@@ -22,13 +22,17 @@ const robot = new Robot("Hank");
 
 robot.emit("speak", "hello");
 
+<<<<<<< HEAD
 /* ---------------------- ANCHOR moved this to plant.js --------------------- */
 
+=======
+>>>>>>> 1056d899c871b0d6b3b5da1e383a86be904fc23d
 class Plant extends EventEmitter {
 	constructor(size, hasBeenPlanted) {
 		super();
 		this.size = 0;
 		this.hasBeenPlanted = false;
+<<<<<<< HEAD
 		this.once("plantSeed", () => {
 			this.size = 1;
 			this.hasBeenPlanted = true
@@ -56,3 +60,19 @@ plant.emit('plantSeed');
 plant.emit('water');
 plant.emit('harvest')
 plant.emit('bugAttack')
+=======
+		this.addListeners();
+	}
+
+	this.addListeners(){
+		this.on('plantSeed')
+	}
+
+	plantSeed() {
+		this.size = 1;
+		this.hasBeenPlanted = true;
+	}
+}
+
+const newPlant = new Plant("plantSeed");
+>>>>>>> 1056d899c871b0d6b3b5da1e383a86be904fc23d
