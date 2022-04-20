@@ -27,14 +27,17 @@ class Plant extends EventEmitter {
 		super();
 		this.size = 0;
 		this.hasBeenPlanted = false;
+		this.addListeners();
+	}
 
-		this.once("plantSeed", () => {
-				this.size ++ 1
-				this.hasBeenPlanted = true
-				console.log(`Seed has been planted: This plant is ${this.size} inches tall`)
-		});
+	this.addListeners(){
+		this.on('plantSeed')
+	}
+
+	plantSeed() {
+		this.size = 1;
+		this.hasBeenPlanted = true;
 	}
 }
 
-
-const newPlant = new Plant("plantSeed")
+const newPlant = new Plant("plantSeed");
